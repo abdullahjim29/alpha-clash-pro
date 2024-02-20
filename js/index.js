@@ -8,7 +8,17 @@
 
 // 2nd way
 
+function continueGame(){
+    const alphabet = getRandomAlphabet()
+    console.log('Your Random Letter is:',alphabet);
+
+    const currentLetter = document.getElementById('current-letter');
+    currentLetter.innerText = alphabet;
+}
+
 function playNow(){
     hideElementById('home-screen');
     showElementById('play-ground');
+    continueGame();
 }
+
