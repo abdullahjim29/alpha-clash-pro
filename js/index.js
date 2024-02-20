@@ -16,7 +16,22 @@ function keyboardButtonPressHandle(event){
 
     if(playerPressed === expectedAlphabet){
         console.log('you got a point')
-        console.log('you have pressed correctly :', expectedAlphabet);
+        
+        // update score:
+        // setp 1: get the current score
+        const currentScore = document.getElementById('current-score');
+        const currentScoreText = currentScore.innerText;
+        const score = parseInt(currentScoreText);
+
+
+        // step 2: increse the score by 1
+        const newScore = score + 1;
+
+
+        // step 3: show the update score
+        currentScore.innerText = newScore;
+
+
         removeBgColorById(expectedAlphabet);
         continueGame();
     }

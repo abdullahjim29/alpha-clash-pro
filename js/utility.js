@@ -11,6 +11,7 @@ function showElementById(elementId){
 function addBgColorById(elementId){
     const bgColor = document.getElementById(elementId);
     bgColor.classList.add('bg-yellow-400');
+    
 }
 
 function removeBgColorById(elementId){
