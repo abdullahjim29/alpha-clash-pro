@@ -1,4 +1,3 @@
-// 1 way 
 // function playNow(){
 //     const homeScreen = document.getElementById('home-screen');
 //     homeScreen.classList.add('hidden');
@@ -6,7 +5,27 @@
 //     playGround.classList.remove('hidden');
 // }
 
-// 2nd way
+function keyboardButtonPressHandle(event){
+    const playerPressed = event.key;
+    // console.log('player pressed',playerPressed);
+
+    const currentLetter = document.getElementById('current-letter');
+    const currentAlphabet = currentLetter.innerText;
+    const expectedAlphabet = currentAlphabet.toLowerCase();
+    console.log(playerPressed, expectedAlphabet);
+
+    if(playerPressed === expectedAlphabet){
+        console.log('you got a point')
+        console.log('you have pressed correctly :', expectedAlphabet);
+        removeBgColorById(expectedAlphabet);
+        continueGame();
+    }
+    else{
+        console.log('you loose a life');
+    }
+}
+
+document.addEventListener('keyup',keyboardButtonPressHandle)
 
 function continueGame(){
     const alphabet = getRandomAlphabet()
@@ -14,6 +33,8 @@ function continueGame(){
 
     const currentLetter = document.getElementById('current-letter');
     currentLetter.innerText = alphabet;
+
+    addBgColorById(alphabet);
 }
 
 function playNow(){
