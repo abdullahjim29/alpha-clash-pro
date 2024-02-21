@@ -20,6 +20,20 @@ function removeBgColorById(elementId){
 }
 
 
+function getTextElementValueById(elementId){
+    const element = document.getElementById(elementId);
+    const getTextValue = element.innerText;
+    const value = parseInt(getTextValue);
+    return value;
+}
+
+
+function setTextElementValueById(elementId,value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+
+
 function getRandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetString.split('');
